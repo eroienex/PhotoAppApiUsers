@@ -3,6 +3,7 @@ package com.appsdeveloperblog.photoapp.api.users.ui.model;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import com.appsdeveloperblog.photoapp.api.users.shared.ParameterMap;
 
 public class CreateUserRequestModel {
 
@@ -47,6 +48,14 @@ public class CreateUserRequestModel {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
+	public ParameterMap toParameterMap() {
+		ParameterMap map = new ParameterMap();
+		map.put("firstName", this.firstName);
+		map.put("lastName", this.lastName);
+		map.put("password", this.password);
+		map.put("email", this.email);
+		return map;
+	}
+
 }

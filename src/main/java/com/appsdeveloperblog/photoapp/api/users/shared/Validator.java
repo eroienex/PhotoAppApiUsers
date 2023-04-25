@@ -17,7 +17,7 @@ public abstract class Validator<T> {
         if (body.hasErrors()) {
             Map<String, String> errors = new HashMap<>(body.getErrors());
 
-            throw new ValidationException(errors);
+            //throw new ValidationException(errors);
         }
 
         return result;
