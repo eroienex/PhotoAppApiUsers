@@ -16,7 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class WebSecurity {
 	
-	/**private Environment environment;
+	private Environment environment;
 	
 	@Autowired
 	public WebSecurity(Environment environment) {
@@ -40,10 +40,10 @@ public class WebSecurity {
 		return http.build();
 		
 	}
-	*/
 
 
-	@Bean
+
+	/**@Bean
 	protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
 		http.csrf().disable();
@@ -57,6 +57,6 @@ public class WebSecurity {
 		http.headers().frameOptions().disable();
 		return http.build();
 
-	}
+	}*/
 
 }
