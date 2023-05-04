@@ -49,7 +49,7 @@ public class WebSecurity {
 		http.csrf().disable();
 
 		http.authorizeHttpRequests()
-				.requestMatchers(HttpMethod.POST, "/users").permitAll()
+				.requestMatchers(HttpMethod.POST, "/users/**").permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
 				.and()
 				.addFilter(authenticationFilter)
