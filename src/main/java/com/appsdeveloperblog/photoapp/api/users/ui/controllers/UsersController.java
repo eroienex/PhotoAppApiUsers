@@ -36,6 +36,10 @@ public class UsersController {
 	public String status() {
 		return "Working on port " + environment.getProperty("local.server.port");
 	}
+	@GetMapping("/sayhi")
+	public String hi() {
+		return "Hiya, working on port" + environment.getProperty("local.server.port");
+	}
 
 	@PostMapping
 	public ResponseEntity<?> createUser(@RequestBody CreateUserRequestModel userDetails) {
