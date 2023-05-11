@@ -46,10 +46,9 @@ public class WebSecurity {
 				new AuthenticationFilter(usersService, environment, authenticationManager);
 		authenticationFilter.setFilterProcessesUrl(environment.getProperty("login.url.path"));
 
-		http.csrf().disable();
-
-		http.authorizeHttpRequests()
-				.requestMatchers(HttpMethod.POST, "/users/**").permitAll()
+		http.csrf().disable()
+				.authorizeHttpRequests()
+				.requestMatchers("/users").permitAll()
 				.requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
 				.and()
 				.addFilter(authenticationFilter)
